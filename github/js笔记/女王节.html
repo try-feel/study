@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+      <input type="date" id="d">
+      <script>
+      var d = document.getElementById("d");
+		var nw = confirm("请问是女性顾客吗？");
+		nw==true?d.oninput=function(){d.value=="2019-03-08"?alert("今天妇女节,对所有女性顾客5折优惠"):alert("无优惠")}:alert("无优惠");
+      </script>
+</body>
+</html>

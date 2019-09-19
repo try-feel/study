@@ -52,6 +52,54 @@ Null类型，是一个对象，函数的参数，表示该函数不是对象，�
         console.log(undefined+1);
         //undefined数字类型转换为NaN
  
-###2.3 验证基础数据类型
+### 2.3 检验基础数据类型
+typeof 运算符把信息当做‘字符串’返回,也就是说返回值都是字符串类型.返回值有几种情况：       number,string,Boolean,undefined,function,null返回的是object,对于对象不能用typeof检测.
+
+        var a = 10;//number
+        var b = 'nihao';//string
+        var c = true;//boolean
+        var d = false;//boolean
+        var e = null;//object(空对象)
+        var f = undefined;//undefined
+        var g = ['1',2];//object
+        var h = function(){alert(1)};//function
+
+typeof后面的括号,在有运算的时候一定要使用,否则返回值可能不正确.
 
 ### 2.4 数据类型转换
+2.4.1 强制转换
+强制转换主要指使用number()、string()、boolean()三个函数,手动将各种类型的值分别转为,数字类型、字符串类型、布尔类型.\
+
+	Number()转换为数字类型
+        console.log(Number('352'));//352
+        console.log(Number('nihao'));//NaN
+        console.log(Number(0));//0
+        console.log(Number(true));//1
+        console.log(Number(false));//0
+    String（）转换为字符串类型
+        console.log(String('222'));//'222'
+        console.log(String(true));//'true'
+        console.log(String(false));//false
+    Boolean（）转换为布尔类型
+        console.log(Boolean('654'));//true
+        console.log(Boolean('nihao'));//true
+        console.log(Boolean(''));//false
+        console.log(Boolean(0));//false
+        console.log(Boolean(NaN));//false
+
+2.4.2 parseInt()和parseFloat()
+parseInt()函数可以将数据转换成数字类型,并取整数部分,浮点数部分不取.如先遇到非数字数据,显示NaN.
+parseFloat（）函数可以将数据转换为数字类型，取整数和浮点数部分、
+
+        var a = 10.67;//10
+        var b = '4.644';//4
+        var c = '12e';//12
+        var d = 'nihao';//NaN
+        var e = 'nihao132'//NaN
+         /*****************/
+        var a = 10.67;//10.67
+        var b = '4.644';//4.644
+        var c = '12.4e';//12.4
+
+2.4.3自动转换
+变量的数据类型不确定，但各种运算符对数据类型是有要求的，如果运算符发现运算的数据类型与预期的不一样，就会自动转换。
